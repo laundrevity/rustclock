@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>rust clock</title>
+    <script>
+        async function updateClock() {
+            const response = await fetch('/get_time');
+            const data = await response.json();
+            document.getElementById('clock').textContent = data.time;
+            setTimeout(updateClock, 1000);
+        }
+        updateClock();
+    </script>
+</head>
+<body>
+    <p><span id="clock"></span></p>
+</body>
+</html>
