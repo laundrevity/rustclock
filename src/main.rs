@@ -7,8 +7,6 @@ use rocket_dyn_templates::Template;
 use serde_derive::Serialize;
 use std::collections::HashMap;
 
-
-
 #[derive(Serialize)]
 struct TimeMessage {
     time: String,
@@ -19,7 +17,6 @@ fn index() -> Template {
     let context = HashMap::<String, String>::new();
     Template::render("index", context)
 }
-
 
 #[get("/get_time")]
 fn get_time() -> Json<TimeMessage> {
